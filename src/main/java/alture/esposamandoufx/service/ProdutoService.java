@@ -100,7 +100,6 @@ public class ProdutoService {
                 items.add(item);
             }
         }
-        // Sort by purchase date (newest first)
         items.sort(Comparator.comparing(Produto::getPurchaseDate).reversed());
         return items;
     }

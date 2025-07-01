@@ -47,14 +47,11 @@ public class MainController {
     private final Map<Produto, String> itemIdMap = new HashMap<>();
 
     public MainController() {
-        // Inicia um Singleton do Produto Service
         produtoService = ProdutoService.getInstance();
 
         try {
-            // Cria o caminho na pasta do usuario para manter a persistencia
             String userHome = System.getProperty("user.home");
-            String dbPath = userHome + File.separator + "GroceryListManager" + File.separator + "database";
-            // Abre o banco de dados com a persistencia
+            String dbPath = userHome + File.separator + "MinhaEsposaMandou" + File.separator + "database";
             produtoService.open(dbPath);
             System.out.println("Database opened at: " + dbPath);
         } catch (Exception e) {
@@ -99,7 +96,6 @@ public class MainController {
         purchaseColumn.setCellFactory(cellFactory);
         shoppingListTableView.getColumns().add(purchaseColumn);
 
-        // Logica do Historico
         historyItemNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         historyQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         historyDateColumn.setCellValueFactory(cellData -> 
@@ -107,7 +103,6 @@ public class MainController {
         atualizarTabelas();
     }
 
-    // Confirmaçao de Compra
     private void confirmacaoCompra(Produto item) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Compra");

@@ -37,18 +37,15 @@ public class RocksDBService {
         }
 
         try {
-            // Cria o diretório se nao existir
             File dbDir = new File(dbPath);
             if (!dbDir.exists()) {
                 dbDir.mkdirs();
             }
 
-            // Configurar as opçoes do rocksdb
             this.options = new Options();
             this.options.setCreateIfMissing(true);
             this.options.setErrorIfExists(false);
 
-            // Abrir o Banco de Dados
             this.database = RocksDB.open(options, dbPath);
             this.dbPath = dbPath;
             this.isOpen = true;
