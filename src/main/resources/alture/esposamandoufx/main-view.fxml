@@ -21,11 +21,10 @@
         <TabPane tabClosingPolicy="UNAVAILABLE">
             <Tab text="Lista de Compras">
                 <VBox spacing="10.0">
-                    <Label text="Compras:"/>
                     <TableView fx:id="shoppingListTableView" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn fx:id="itemNameColumn" text="Item" prefWidth="200"/>
-                            <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="100"/>
+                            <TableColumn fx:id="itemNameColumn" text="Produto" prefWidth="200"/>
+                            <TableColumn fx:id="quantityColumn" text="Quantidade" prefWidth="100"/>
                         </columns>
                     </TableView>
 
@@ -40,12 +39,11 @@
             </Tab>
             <Tab text="Histórico de Compras">
                 <VBox spacing="10.0">
-                    <Label text="Histórico:"/>
                     <TableView fx:id="purchaseHistoryTableView" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn fx:id="historyItemNameColumn" text="Item" prefWidth="150"/>
-                            <TableColumn fx:id="historyQuantityColumn" text="Quantity" prefWidth="100"/>
-                            <TableColumn fx:id="historyDateColumn" text="Purchase Date" prefWidth="200"/>
+                            <TableColumn fx:id="historyItemNameColumn" text="Produto" prefWidth="150"/>
+                            <TableColumn fx:id="historyQuantityColumn" text="Quantidade" prefWidth="100"/>
+                            <TableColumn fx:id="historyDateColumn" text="Dia da Compra" prefWidth="200"/>
                         </columns>
                     </TableView>
                 </VBox>
@@ -56,7 +54,7 @@
     <bottom>
         <HBox spacing="10.0" alignment="CENTER_RIGHT">
             <Label fx:id="statusLabel" HBox.hgrow="ALWAYS"/>
-            <Button text="Refresh Lists" onAction="#atualizarBotao"/>
+            <Button text="Atualizar Produtos" onAction="#atualizarBotao"/>
         </HBox>
     </bottom>
 </BorderPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="alture.esposamandoufx.controller.AdicionarItemController">
+    <headerText>Adicionar Produto que devo Comprar</headerText>
+    
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+            
+            <Label text="Nome do Produto:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="itemNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                       promptText="Coloque o nome do produto" prefWidth="200"/>
+            
+            <Label text="Quantidade do Produto:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                       promptText="Coloque a quantidade do produto em gramas ou quantidade com prefixo" prefWidth="200"/>
+        </GridPane>
+    </content>
+    
+    <buttonTypes>
+        <ButtonType fx:constant="OK"/>
+        <ButtonType fx:constant="CANCEL"/>
+    </buttonTypes>
+</DialogPane>
